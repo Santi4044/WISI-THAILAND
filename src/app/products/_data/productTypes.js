@@ -9,7 +9,7 @@ export const productTypes = [
     // --- new fields for the detail page ---
     range: "GF Product Range",
     tagline: "Compact Video Headend",
-    heroImage: "/images/products/falcon-hero.png", // swap for real asset when ready
+    heroImage: "/images/products/falcon-hero.png",
     intro:
       "The new FALCON headend product range features generally recognised and established WISI signal processing technology, used across new and future-proof model versions and adaptable to specific market needs through flexible configurations.",
 
@@ -63,17 +63,35 @@ export const productTypes = [
     name: 'Tangram',
     description: 'Modular headend systems designed for flexibility and scalability in any installation.',
     color: '#00385E',
+    image: "/src/app/_components/main_product_images/tangram.png",
+
+    features: [
+
+    ],
   },
   {
     slug: 'chameleon',
     name: 'Chameleon',
     description: 'Versatile signal processing equipment adaptable to a wide range of broadcast environments.',
     color: '#004874',
+    image: "/src/app/_components/main_product_images/chameleon.png",
+
+    features: [
+      "One hardware for all applications",
+      "Flexibility through software applications",
+      "Scalability in function and installation size",
+      "Excellent performance, suitable for large network operator",
+      "Receive: DVB-S/S2/S2X/T/T2/ISDB-T, 8VSB, QAM, SRT, ASI and/or IP",
+      "Output: analog, DVB-T, DTMB, FM, SDI, QAM, ASI, SRT and/or IP",
+      "Encode HDMI, HD/SD-SDI and A/V inputs to IP digital outputs",
+      "Decode MPEG 2/4 SD or HD into SDI",
+    ],
   },
   {
-    slug: 'octopus',
-    name: 'Octopus',
+    slug: 'optopus',
+    name: 'Optopus',
     description: 'Advanced fibre optic and IP solutions for modern network infrastructures.',
     color: '#00385E',
+    image: "/src/app/_components/main_product_images/optopus.png",
   },
 ]
