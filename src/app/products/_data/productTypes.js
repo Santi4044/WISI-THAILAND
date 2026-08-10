@@ -3,6 +3,7 @@ export const productTypes = [
     slug: "falcon",
     name: "Falcon",
     color: "#004874",
+    image: "/src/app/_components/main_product_images/falcon.png",
     description: "Compact video headend with flexible transmodulation for CATV and IP distribution.",
 
     // --- new fields for the detail page ---
