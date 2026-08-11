@@ -3,7 +3,7 @@ export const productTypes = [
     slug: "falcon",
     name: "Falcon",
     color: "#004874",
-    image: "/src/app/_components/main_product_images/falcon.png",
+    image: "/images/products/falcon.png",
     description: "Compact video headend with flexible transmodulation for CATV and IP distribution.",
 
     // --- new fields for the detail page ---
@@ -63,7 +63,7 @@ export const productTypes = [
     name: 'Tangram',
     description: 'Modular headend systems designed for flexibility and scalability in any installation.',
     color: '#00385E',
-    image: "/src/app/_components/main_product_images/tangram.png",
+    image: "/images/products/tangram.png",
 
     features: [
       "Supports linear DVB and IP sources as well as non-linear streaming protocols",
@@ -108,7 +108,7 @@ export const productTypes = [
     name: 'Chameleon',
     description: 'Versatile signal processing equipment adaptable to a wide range of broadcast environments.',
     color: '#004874',
-    image: "/src/app/_components/main_product_images/chameleon.png",
+    image: "/images/products/chameleon.png",
 
     features: [
       "One hardware for all applications",
@@ -174,7 +174,7 @@ export const productTypes = [
     name: 'Optopus',
     description: 'Advanced fibre optic and IP solutions for modern network infrastructures.',
     color: '#00385E',
-    image: "/src/app/_components/main_product_images/optopus.png",
+    image: "/images/products/optopus.png",
 
     features: [
       "Full modular concept allows every applications mix",

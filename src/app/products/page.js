@@ -48,9 +48,10 @@ export default async function ProductsPage() {
         <section className="mx-auto w-full max-w-7xl px-6 py-14 sm:px-10">
           <div className="grid gap-8 sm:grid-cols-2">
             {productTypes.map((type, index) => (
-              <div
+              <Link
                 key={type.slug}
-                className="animate-fade-up group flex flex-col overflow-hidden rounded-2xl border border-[#004874]/10 bg-white shadow-[0_2px_16px_rgba(0,72,116,0.08)] transition hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,72,116,0.14)]"
+                href={`/products/${type.slug}`}
+                className="animate-fade-up group flex cursor-pointer flex-col overflow-hidden rounded-2xl border border-[#004874]/10 bg-white shadow-[0_2px_16px_rgba(0,72,116,0.08)] transition hover:-translate-y-1 hover:shadow-[0_8px_32px_rgba(0,72,116,0.14)]"
                 style={{ animationDelay: `${index * 80}ms` }}
               >
                 {/* Placeholder image area */}
@@ -84,18 +85,15 @@ export default async function ProductsPage() {
                     {type.description}
                   </p>
                   <div className="mt-5">
-                    <Link
-                      href={`/products/${type.slug}`}
-                      className="inline-flex items-center gap-2 rounded-xl bg-[#004874] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-[0_4px_14px_rgba(0,72,116,0.25)] transition hover:bg-[#003558]"
-                    >
+                    <span className="inline-flex items-center gap-2 rounded-xl bg-[#004874] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.25em] text-white shadow-[0_4px_14px_rgba(0,72,116,0.25)] transition group-hover:bg-[#003558]">
                       Explore
                       <svg className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                       </svg>
-                    </Link>
+                    </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
