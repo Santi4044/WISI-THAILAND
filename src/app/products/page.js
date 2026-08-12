@@ -77,20 +77,6 @@ export default async function ProductsPage() {
                     />
                   )}
 
-                  {/* Overlayed text brand-style */}
-                  <span
-                    className={`${cormorant.className} select-none text-6xl font-bold text-white/20 sm:text-8xl`}
-                    aria-hidden="true"
-                  >
-                    {type.name}
-                  </span>
-                  <span
-                    className={`${cormorant.className} absolute inset-0 flex items-center justify-center text-4xl font-bold tracking-wide text-white sm:text-5xl`}
-                  >
-                    {type.name}
-                  </span>
-                </div>
-
                 {/* Card content */}
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#C8A96E]">Product Family</p>
