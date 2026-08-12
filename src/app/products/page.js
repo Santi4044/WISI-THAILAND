@@ -66,7 +66,8 @@ export default async function ProductsPage() {
                       src={type.image}
                       alt={type.name}
                       fill
-                      className="object-cover transition duration-300 group-hover:scale-105"
+                      className="object-contain p-4 transition duration-300 group-hover:scale-105"
+                      style={{ objectPosition: 'center' }}
                     />
                   ) : (
                     <div
