@@ -5,7 +5,7 @@ import SiteHeader from "../../_components/site-header";
 import SiteShell from "../../_components/site-shell";
 import { cormorant } from "../../_components/brand-fonts";
 import { productTypes } from "../_data/productTypes";
-import ProductGallery from "../_components/ProductGallery";
+import ProductImageLightbox from "../_components/ProductImageLightbox";
 
 export async function generateStaticParams() {
   return productTypes.map((t) => ({ type: t.slug }));
@@ -82,13 +82,16 @@ export default async function ProductTypePage({ params }) {
               </div>
             </div>
 
-            {/* Right — image / gallery */}
+            {/* Right — image */}
             <div className="animate-fade-up flex items-center justify-center" style={{ animationDelay: '100ms' }}>
-              <div className="w-full max-w-md">
-                <ProductGallery
-                  images={productType.images ?? [productType.heroImage ?? productType.image]}
+              <div className="w-full max-w-sm">
+                <ProductImageLightbox
+                  imageUrl={productType.heroImage ?? productType.image}
                   productName={productType.name}
+                  // pass a wrapper class for sizing & rounding
                   wrapperClassName="relative h-64 w-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)] sm:h-72"
+                  // optional: inner image padding (component uses p-8 by default; we'll set a bit less)
+                  imagePadding="p-6"
                 />
               </div>
             </div>
