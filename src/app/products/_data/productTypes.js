@@ -9,7 +9,7 @@ export const productTypes = [
     // --- new fields for the detail page ---
     range: "GF Product Range",
     tagline: "Compact Video Headend",
-    heroImage: "/images/products/falcon-hero.png",
+    heroImage: "/images/products/falcon.png",
     intro:
       "The new FALCON headend product range features generally recognised and established WISI signal processing technology, used across new and future-proof model versions and adaptable to specific market needs through flexible configurations.",
 
