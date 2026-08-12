@@ -113,6 +113,70 @@ export default async function ProductTypePage({ params }) {
           </section>
         )}
 
+        {/* ── Showcase — alternating image & text rows ───────────────────────────────────────── */}
+        {(productType.images && productType.images.length > 0) && (
+          <section className="mx-auto w-full max-w-7xl px-6 py-12 sm:px-10">
+            <div className="grid gap-12">
+              {/* Row 1: Image left, text right */}
+              <div className="grid items-center gap-8 lg:grid-cols-2">
+                <div className="order-1 lg:order-1">
+                  <div className="max-w-lg">
+                    <ProductImageLightbox
+                      imageUrl={productType.images[0] ?? productType.heroImage ?? productType.image}
+                      productName={productType.name}
+                      wrapperClassName="relative h-64 w-full overflow-hidden rounded-2xl bg-white shadow-[0_12px_40px_rgba(0,72,116,0.10)]"
+                      imagePadding="p-6"
+                    />
+                  </div>
+                </div>
+
+                <div className="order-2 lg:order-2">
+                  <div className="rounded-2xl border border-[#004874]/8 bg-white p-8 shadow-[0_2px_16px_rgba(0,72,116,0.06)]">
+                    <h3 className={`${cormorant.className} text-2xl font-bold text-[#0D1B2A]`}>Overview</h3>
+                    <p className="mt-4 text-sm leading-7 text-[#4A6274]">
+                      {(productType.sections && productType.sections[0]?.body) || productType.intro || productType.description}
+                    </p>
+                    <div className="mt-6">
+                      <Link href="/contact" className="inline-flex items-center gap-2 rounded-xl bg-[#004874] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white shadow-[0_6px_24px_rgba(0,72,116,0.25)] transition hover:bg-[#003558]">
+                        Enquire
+                        <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Row 2: Text left, image right — use a second image if available, otherwise fallback */}
+              <div className="grid items-center gap-8 lg:grid-cols-2">
+                <div className="order-2 lg:order-1">
+                  <div className="rounded-2xl border border-[#004874]/8 bg-white p-8 shadow-[0_2px_16px_rgba(0,72,116,0.06)]">
+                    <h3 className={`${cormorant.className} text-2xl font-bold text-[#0D1B2A]`}>Features</h3>
+                    <ul className="mt-4 space-y-2 text-sm leading-7 text-[#4A6274]">
+                      {(productType.features || []).slice(0,6).map((f, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className="mt-0.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-[#004874] text-[10px] text-white">✓</span>
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="order-1 lg:order-2">
+                  <div className="max-w-lg">
+                    <ProductImageLightbox
+                      imageUrl={productType.images[1] ?? productType.images[0] ?? productType.heroImage ?? productType.image}
+                      productName={productType.name}
+                      wrapperClassName="relative h-64 w-full overflow-hidden rounded-2xl bg-white shadow-[0_12px_40px_rgba(0,72,116,0.10)]"
+                      imagePadding="p-6"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
         {/* ── Key Features ─────────────────────────────────────────── */}
         {productType.features && productType.features.length > 0 && (
           <section className="mx-auto w-full max-w-7xl px-6 pb-10 sm:px-10">
