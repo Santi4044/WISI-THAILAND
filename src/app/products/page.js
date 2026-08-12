@@ -76,6 +76,7 @@ export default async function ProductsPage() {
                       className="absolute inset-0"
                     />
                   )}
+                </div>
 
                 {/* Card content */}
                 <div className="flex flex-1 flex-col p-6">
