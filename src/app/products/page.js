@@ -59,9 +59,25 @@ export default async function ProductsPage() {
                   className="relative flex items-center justify-center overflow-hidden"
                   style={{
                     aspectRatio: '16/9',
-                    background: `linear-gradient(135deg, ${type.color} 0%, #0D1B2A 100%)`,
                   }}
                 >
+                  {type.image ? (
+                    <Image
+                      src={type.image}
+                      alt={type.name}
+                      fill
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div
+                      style={{
+                        background: `linear-gradient(135deg, ${type.color} 0%, #0D1B2A 100%)`,
+                      }}
+                      className="absolute inset-0"
+                    />
+                  )}
+
+                  {/* Overlayed text brand-style */}
                   <span
                     className={`${cormorant.className} select-none text-6xl font-bold text-white/20 sm:text-8xl`}
                     aria-hidden="true"
