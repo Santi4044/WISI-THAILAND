@@ -173,7 +173,7 @@ export const productTypes = [
     slug: 'optopus',
     name: 'Optopus',
     description: 'Advanced fibre optic and IP solutions for modern network infrastructures.',
-    color: '#00385E',
+    color: '#ffffff',
     image: "/images/products/optopus.png",
 
     features: [
