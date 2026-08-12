@@ -5,6 +5,7 @@ import SiteHeader from "../../_components/site-header";
 import SiteShell from "../../_components/site-shell";
 import { cormorant } from "../../_components/brand-fonts";
 import { productTypes } from "../_data/productTypes";
+import ProductImageLightbox from "../_components/ProductImageLightbox";
 
 export async function generateStaticParams() {
   return productTypes.map((t) => ({ type: t.slug }));
@@ -18,7 +19,7 @@ export default async function ProductTypePage({ params }) {
   return (
     <SiteShell>
       <SiteHeader />
-      <main className="relative pt-20">
+      <main className="relative pt-16">
 
         {/* ── Hero ─────────────────────────────────────────────────── */}
         <section
@@ -83,14 +84,14 @@ export default async function ProductTypePage({ params }) {
 
             {/* Right — image */}
             <div className="animate-fade-up flex items-center justify-center" style={{ animationDelay: '100ms' }}>
-              <div className="relative h-64 w-full max-w-sm overflow-hidden rounded-2xl bg-white/5 shadow-[0_8px_40px_rgba(0,0,0,0.35)] sm:h-72">
-                <Image
-                  src={productType.image}
-                  alt={productType.name}
-                  fill
-                  className="object-contain p-6"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
+              <div className="w-full max-w-sm">
+                <ProductImageLightbox
+                  imageUrl={productType.heroImage ?? productType.image}
+                  productName={productType.name}
+                  // pass a wrapper class for sizing & rounding
+                  wrapperClassName="relative h-64 w-full overflow-hidden rounded-2xl bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)] sm:h-72"
+                  // optional: inner image padding (component uses p-8 by default; we'll set a bit less)
+                  imagePadding="p-6"
                 />
               </div>
             </div>
